@@ -18,7 +18,7 @@ Once the project moves into development, the press release can be used as a touc
  
 ## View and Collect Inspirational Quotes ##
 
-## Who it is for: ##
+## Who It Is For ##
   > For those needing a little boost of positive energy and a way to keep a collection of their favorites.
 
 ## Product Summary ##
