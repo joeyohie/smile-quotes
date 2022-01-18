@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import axios from 'axios';
+import RandomQuote from './components/RandomQuote.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -29,7 +30,8 @@ class App extends React.Component {
     return (
       <div>
         <h1>smile quotes</h1>
-        <h3>come for the smiles, stay to be inspired</h3>
+        <h2>come for the smiles, stay to be inspired</h2>
+        <RandomQuote randomQuote={this.state.randomQuote}/>
       </div>
     );
   }
