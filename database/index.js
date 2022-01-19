@@ -25,7 +25,7 @@ const save = function (data, callback) {
         callback('saved')
       }
       if (results.modifiedCount === 1)
-      callback('updated');
+        callback('updated');
     }
   });
 }
@@ -47,6 +47,27 @@ const retrieveRandom = function (callback) {
   })
 }
 
+const search = function (filter, callback) {
+  var key = Object.keys(filter)[0];
+  var value = filter[key];
+  // format filter using regex
+  var regexFilter = {
+    [key]: {
+      $regex: value, 
+      $options: 'i'
+    }
+  }
+
+  Quote.find(regexFilter).sort({ updatedAt: -1 }).exec((err, searchResults) => {
+    if (err) {
+      console.log('error in searching for quotes', err);
+    } else {
+      console.log('search results', searchResults);
+      callback(searchResults);
+    }
+  })
+}
+
 const retrieveFiveMostRecent = function (callback) {
   Quote.find({}).sort({ updatedAt: -1 }).exec((err, results) => {
     if (err) {
@@ -59,4 +80,4 @@ const retrieveFiveMostRecent = function (callback) {
   });
 }
 
-module.exports = { save, retrieveRandom }
+module.exports = { save, retrieveRandom, search }
