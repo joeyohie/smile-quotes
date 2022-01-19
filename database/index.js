@@ -5,7 +5,7 @@ mongoose.connect('mongodb://localhost:27017/smile-quotes');
 const quoteSchema = new mongoose.Schema({
   text: { type: String, unique: true },
   author: { type: String, default: 'anonymous' },
-  categroy: { type: String, default: 'general' }
+  category: String
 },
   {
     timestamps: true
@@ -15,7 +15,7 @@ const Quote = mongoose.model('Quote', quoteSchema);
 
 const save = function (data, callback) {
   console.log('in save');
-  Quote.updateOne({ text: data.text }, data, { upsert: true }, (err, results) => {
+  Quote.updateOne({ text: data.text }, { author: data.author, category: data.category }, { upsert: true }, (err, results) => {
     if (err) {
       console.log('error in saving quote', err);
       callback('error in saving quote');

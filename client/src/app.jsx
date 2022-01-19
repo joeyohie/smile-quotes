@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import axios from 'axios';
-import RandomQuote from './components/RandomQuote.jsx'
+import RandomQuote from './components/RandomQuote.jsx';
+import AddQuoteForm from './components/AddQuoteForm.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class App extends React.Component {
       randomQuote: {}
     }
     // method bindings
-    // this.handleClick = this.handleClick.bind(this);
+    this.add = this.add.bind(this);
   }
 
   componentDidMount() {
@@ -26,12 +27,24 @@ class App extends React.Component {
       })
   }
 
+  add(quoteFormData) {
+    console.log('here', quoteFormData);
+    axios.post('/quotes', quoteFormData)
+      .then((response) => {
+        console.log('success in add method/post', response);
+      })
+      .catch((error) => {
+        console.log('error in add method/post', error);
+      })
+  }
+
   render() {
     return (
       <div>
         <h1>smile quotes</h1>
         <h2>come for the smiles, stay to be inspired</h2>
         <RandomQuote randomQuote={this.state.randomQuote}/>
+        <AddQuoteForm add={this.add}/>
       </div>
     );
   }
