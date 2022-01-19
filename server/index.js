@@ -14,8 +14,8 @@ app.get('/quotes', (req, res) => {
 });
 
 app.get('/search', (req, res) => {
-  console.log('search body', req.body)
-  search(req.body, (searchResults) => {
+  console.log('search query', req.query)
+  search(req.query, (searchResults) => {
     res.send(searchResults);
   });
 })
