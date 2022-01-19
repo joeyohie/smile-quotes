@@ -4,6 +4,7 @@ import $ from 'jquery';
 import axios from 'axios';
 import RandomQuote from './components/RandomQuote.jsx';
 import AddQuoteForm from './components/AddQuoteForm.jsx';
+import Search from './components/Search.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -51,6 +52,7 @@ class App extends React.Component {
         <h2>come for the smiles, stay to be inspired</h2>
         <RandomQuote randomQuote={this.state.randomQuote}/>
         <AddQuoteForm add={this.add}/>
+        <Search />
       </div>
     );
   }
