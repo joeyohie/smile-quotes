@@ -32,6 +32,12 @@ class App extends React.Component {
     axios.post('/quotes', quoteFormData)
       .then((response) => {
         console.log('success in add method/post', response);
+        if (response.data === 'saved') {
+          alert('your quote has been successfully SAVED');
+        }
+        if (response.data === 'updated') {
+          alert('your quote has been successfully UPDATED');
+        }
       })
       .catch((error) => {
         console.log('error in add method/post', error);

@@ -21,7 +21,11 @@ const save = function (data, callback) {
       callback('error in saving quote');
     } else {
       console.log('results from save', results);
-      callback();
+      if (results.upsertedCount === 1) {
+        callback('saved')
+      }
+      if (results.modifiedCount === 1)
+      callback('updated');
     }
   });
 }

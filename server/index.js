@@ -18,8 +18,12 @@ app.post('/quotes', (req, res) => {
   save(req.body, (result) => {
     if (result === 'error in saving quote') {
       res.send('error in saving quote');
-    } else {
-      res.send('quote saved :)');
+    } 
+    if (result === 'saved') {
+      res.send('saved')
+    }
+    if (result === 'updated') {
+      res.send('updated')
     }
   });
 });

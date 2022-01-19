@@ -48,8 +48,11 @@ class AddQuoteForm extends React.Component {
               category: this.state.category
             }
             this.props.add(withoutAuthor);
+            this.setState({ text: '', category: 'general' });
           } else {
             this.props.add(this.state);
+            this.setState({ text: '', author: '', category: 'general' });
+
           }
         }
         );
@@ -61,8 +64,10 @@ class AddQuoteForm extends React.Component {
             category: this.state.category
           }
           this.props.add(withoutAuthor);
+          this.setState({ text: '', category: 'general' });
         } else {
           this.props.add(this.state);
+          this.setState({ text: '', author: '', category: 'general' });
         }
       }
     }
