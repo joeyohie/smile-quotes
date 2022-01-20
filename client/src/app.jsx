@@ -52,7 +52,11 @@ class App extends React.Component {
     console.log('query', query);
     axios.get('/search', query)
       .then((response) => {
-        this.setState({ quotesList: response.data });
+        if (response.data.length > 0) {
+          this.setState({ quotesList: response.data });
+        } else {
+          alert('no quotes found based on search query - please try again');
+        }
       })
       .catch((error) => {
         alert('search error');
