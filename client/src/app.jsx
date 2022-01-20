@@ -27,7 +27,6 @@ class App extends React.Component {
         this.setState({ randomQuote: response.data });
       })
       .catch((error) => {
-        console.log('componentDidMount error', error);
         alert('error in getting a random quote');
       })
   }
@@ -44,7 +43,6 @@ class App extends React.Component {
         }
       })
       .catch((error) => {
-        console.log('error in add method/post', error);
         alert('error in saving quote');
       })
   }
@@ -57,8 +55,7 @@ class App extends React.Component {
         this.setState({ quotesList: response.data });
       })
       .catch((error) => {
-        // ********** add a status code **********
-        alert('search error')
+        alert('search error');
       })
   }
 
@@ -68,7 +65,7 @@ class App extends React.Component {
         this.setState({ quotesList: response.data });
       })
       .catch((error) => {
-        alert('error in retrieving five most recent quotes')
+        alert('error in retrieving five most recent quotes');
       })
   }
 
