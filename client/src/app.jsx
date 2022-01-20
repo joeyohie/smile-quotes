@@ -5,6 +5,7 @@ import axios from 'axios';
 import RandomQuote from './components/RandomQuote.jsx';
 import AddQuoteForm from './components/AddQuoteForm.jsx';
 import Search from './components/Search.jsx';
+import QuotesList from './components/QuotesList.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -23,7 +24,6 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('/quotes')
       .then((response) => {
-        console.log('componentDidMount response', response.data);
         this.setState({ randomQuote: response.data });
       })
       .catch((error) => {
@@ -78,6 +78,7 @@ class App extends React.Component {
         <RandomQuote randomQuote={this.state.randomQuote}/>
         <AddQuoteForm add={this.add}/>
         <Search search={this.search} fiveMostRecent={this.fiveMostRecent}/>
+        <QuotesList quotes={this.state.quotesList}/>
       </div>
     );
   }
