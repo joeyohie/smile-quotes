@@ -29,7 +29,7 @@ class Search extends React.Component {
     this.props.search({ text: this.state.text });
     this.setState({ text: '' });
   }
-  
+
   // AUTHOR METHODS
   handleAuthorChange(event) {
     this.setState({ author: event.target.value });
@@ -87,7 +87,7 @@ class Search extends React.Component {
               <option value="tranquility">tranquility</option>
             </select>
           </label>
-          <input type="submit" value="submit"/>
+          <input type="submit" value="submit" />
         </form>
         <button onClick={this.handleClick}>
           click here for the 5 most recently added quotes

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RandomQuote = function({ randomQuote }) {
+const RandomQuote = function ({ randomQuote }) {
   return (
     <div>
       <h3>something to muse over</h3>
