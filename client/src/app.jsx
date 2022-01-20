@@ -34,7 +34,6 @@ class App extends React.Component {
   add(quoteFormData) {
     axios.post('/quotes', quoteFormData)
       .then((response) => {
-        console.log('success in add method/post', response);
         if (response.data === 'saved') {
           alert('your quote has been successfully SAVED');
         }
@@ -49,7 +48,6 @@ class App extends React.Component {
 
   search(searchData) {
     let query = { params: searchData };
-    console.log('query', query);
     axios.get('/search', query)
       .then((response) => {
         if (response.data.length > 0) {
@@ -78,10 +76,10 @@ class App extends React.Component {
       <div>
         <h1>smile quotes</h1>
         <h2>come for the smiles, stay to be inspired</h2>
-        <RandomQuote randomQuote={this.state.randomQuote}/>
-        <AddQuoteForm add={this.add}/>
-        <Search search={this.search} fiveMostRecent={this.fiveMostRecent}/>
-        <QuotesList quotes={this.state.quotesList}/>
+        <RandomQuote randomQuote={this.state.randomQuote} />
+        <AddQuoteForm add={this.add} />
+        <Search search={this.search} fiveMostRecent={this.fiveMostRecent} />
+        <QuotesList quotes={this.state.quotesList} />
       </div>
     );
   }

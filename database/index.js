@@ -53,7 +53,7 @@ const search = function (filter, callback) {
   // format filter using regex
   var regexFilter = {
     [key]: {
-      $regex: value, 
+      $regex: value,
       $options: 'i'
     }
   }

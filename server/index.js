@@ -41,7 +41,7 @@ app.post('/quotes', (req, res) => {
   save(req.body, (err, result) => {
     if (err) {
       res.status(500).send('error in saving quote');
-    } 
+    }
     if (result === 'saved') {
       res.send('saved');
     }

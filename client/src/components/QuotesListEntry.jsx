@@ -1,6 +1,6 @@
 import React from 'react';
 
-const QuotesListEntry = function({ quote }) {
+const QuotesListEntry = function ({ quote }) {
   return (
     <li>"{quote.text}" - {quote.author}</li>
   );
