@@ -80,7 +80,7 @@ class AddQuoteForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             text{' '}
-            <input type="text" value={this.state.text} onChange={this.handleTextChange} />
+            <textarea value={this.state.text} onChange={this.handleTextChange} />
           </label>
           <br></br>
           <label>

@@ -23,6 +23,10 @@ p, ul, form {
   font-size: 20px; 
 }
 
+textarea {
+  vertical-align: top;
+}
+
 .quoteRandom {
   font-size: 24px;
 }
