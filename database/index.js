@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/smile-quotes');
 
 const quoteSchema = new mongoose.Schema({
-  text: { type: String, unique: true },
+  text: { type: String, unique: true, required: true },
   author: { type: String, default: 'anonymous' },
   category: String
 },
@@ -14,18 +14,16 @@ const quoteSchema = new mongoose.Schema({
 const Quote = mongoose.model('Quote', quoteSchema);
 
 const save = function (data, callback) {
-  console.log('in save');
   Quote.updateOne({ text: data.text }, { author: data.author, category: data.category }, { upsert: true }, (err, results) => {
     if (err) {
       console.log('error in saving quote', err);
-      callback('error in saving quote');
+      callback(err);
     } else {
-      console.log('results from save', results);
       if (results.upsertedCount === 1) {
-        callback('saved')
+        callback(null, 'saved')
       }
       if (results.modifiedCount === 1)
-        callback('updated');
+        callback(null, 'updated');
     }
   });
 }
@@ -34,13 +32,15 @@ const retrieveRandom = function (callback) {
   Quote.estimatedDocumentCount((err, results) => {
     if (err) {
       console.log('error in retrieveRandom-estimatedDocumentCount', err);
+      callback(err);
     } else {
       var random = Math.floor(Math.random() * results);
       Quote.findOne().skip(random).exec((err, findOneResults) => {
         if (err) {
           console.log('error in retrieveRandom-findOne', err);
+          callback(err);
         } else {
-          callback(findOneResults);
+          callback(null, findOneResults);
         }
       })
     }
@@ -61,9 +61,9 @@ const search = function (filter, callback) {
   Quote.find(regexFilter).sort({ updatedAt: -1 }).exec((err, searchResults) => {
     if (err) {
       console.log('error in searching for quotes', err);
+      callback(err);
     } else {
-      console.log('search results', searchResults);
-      callback(searchResults);
+      callback(null, searchResults);
     }
   })
 }
@@ -72,10 +72,10 @@ const retrieveFiveMostRecent = function (callback) {
   Quote.find({}).sort({ createdAt: -1 }).exec((err, results) => {
     if (err) {
       console.log('error in retrieving quotes', err);
+      callback(err);
     } else {
       var fiveMostRecent = results.slice(0, 5);
-      console.log('retrieve results', fiveMostRecent);
-      callback(fiveMostRecent);
+      callback(null, fiveMostRecent);
     }
   });
 }

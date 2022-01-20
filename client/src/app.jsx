@@ -28,6 +28,7 @@ class App extends React.Component {
       })
       .catch((error) => {
         console.log('componentDidMount error', error);
+        alert('error in getting a random quote');
       })
   }
 
@@ -44,6 +45,7 @@ class App extends React.Component {
       })
       .catch((error) => {
         console.log('error in add method/post', error);
+        alert('error in saving quote');
       })
   }
 

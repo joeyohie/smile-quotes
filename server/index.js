@@ -8,29 +8,39 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(express.json());
 
 app.get('/quotes', (req, res) => {
-  retrieveRandom((randomQuote) => {
-    res.send(randomQuote);
+  retrieveRandom((err, randomQuote) => {
+    if (err) {
+      res.status(500).send('error in getting a random quote');
+    } else {
+      res.send(randomQuote);
+    }
   })
 });
 
 app.get('/search', (req, res) => {
-  console.log('search query', req.query)
-  search(req.query, (searchResults) => {
-    res.send(searchResults);
+  search(req.query, (err, searchResults) => {
+    if (err) {
+      res.status(500).send('error in searching quotes');
+    } else {
+      res.send(searchResults);
+    }
   });
 })
 
 app.get('/five-most-recent-quotes', (req, res) => {
-  retrieveFiveMostRecent((fiveMostRecent) => {
-    res.send(fiveMostRecent);
+  retrieveFiveMostRecent((err, fiveMostRecent) => {
+    if (err) {
+      res.status(500).send('error in getting the most recently added quotes');
+    } else {
+      res.send(fiveMostRecent);
+    }
   })
 })
 
 app.post('/quotes', (req, res) => {
-  console.log('in post:', req.body);
-  save(req.body, (result) => {
-    if (result === 'error in saving quote') {
-      res.send('error in saving quote');
+  save(req.body, (err, result) => {
+    if (err) {
+      res.status(500).send('error in saving quote');
     } 
     if (result === 'saved') {
       res.send('saved');
