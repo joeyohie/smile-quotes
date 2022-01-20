@@ -79,15 +79,17 @@ class AddQuoteForm extends React.Component {
         <h3>add your favorite quotes</h3>
         <form onSubmit={this.handleSubmit}>
           <label>
-            text
+            text{' '}
             <input type="text" value={this.state.text} onChange={this.handleTextChange} />
           </label>
+          <br></br>
           <label>
-            author
+            author{' '}
             <input type="text" value={this.state.author} onChange={this.handleAuthorChange} />
           </label>
+          <br></br>
           <label>
-            category
+            category{' '}
             <select value={this.state.category} onChange={this.handleCategoryChange}>
               <option value="general">general</option>
               <option value="clarity">clarity</option>
@@ -97,7 +99,8 @@ class AddQuoteForm extends React.Component {
               <option value="tranquility">tranquility</option>
             </select>
           </label>
-          <input type="submit" value="submit" />
+          <br></br>
+          <input className="button" type="submit" value="submit" />
         </form>
       </div>
     );

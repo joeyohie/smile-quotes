@@ -63,21 +63,21 @@ class Search extends React.Component {
         <h3>find what you're looking for</h3>
         <form onSubmit={this.handleTextSubmit}>
           <label>
-            search words from the quote
+            search by word{' '}
             <input type="text" value={this.state.text} onChange={this.handleTextChange} />
-          </label>
+          </label>{' '}
           <input type="submit" value="submit" />
         </form>
         <form onSubmit={this.handleAuthorSubmit}>
           <label>
-            search by author
+            search by author{' '}
             <input type="text" value={this.state.author} onChange={this.handleAuthorChange} />
-          </label>
+          </label>{' '}
           <input type="submit" value="submit" />
         </form>
         <form onSubmit={this.handleCategorySubmit}>
           <label>
-            search by category
+            search by category{' '}
             <select value={this.state.category} onChange={this.handleCategoryChange}>
               <option value="general">general</option>
               <option value="clarity">clarity</option>
@@ -86,10 +86,10 @@ class Search extends React.Component {
               <option value="motivation">motivation</option>
               <option value="tranquility">tranquility</option>
             </select>
-          </label>
+          </label>{' '}
           <input type="submit" value="submit" />
         </form>
-        <button onClick={this.handleClick}>
+        <button className="button" onClick={this.handleClick}>
           click here for the 5 most recently added quotes
         </button>
       </div>

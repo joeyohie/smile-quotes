@@ -75,7 +75,6 @@ class App extends React.Component {
     return (
       <div>
         <h1>smile quotes</h1>
-        <h2>come for the smiles, stay to be inspired</h2>
         <RandomQuote randomQuote={this.state.randomQuote} />
         <AddQuoteForm add={this.add} />
         <Search search={this.search} fiveMostRecent={this.fiveMostRecent} />

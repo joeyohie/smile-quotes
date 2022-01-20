@@ -1,0 +1,36 @@
+html {
+  background-color: #f8f8f8; 
+}
+
+h1 {
+  color: #e1ae36;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 60px; 
+}
+
+h3 {
+  color: #e1ae36;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 25px; 
+  padding-top: 25px;
+}
+
+p, ul, form {
+  color: #0e0d0d;
+  font-family: 'Crimson Pro', serif;
+  font-size: 20px; 
+}
+
+.quoteRandom {
+  font-size: 24px;
+}
+
+.quoteList {
+  font-size: 22px;
+}
+
+.button {
+  margin-top: 10px;
+}

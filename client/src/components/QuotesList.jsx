@@ -8,7 +8,7 @@ const QuotesList = function ({ quotes }) {
       quote={quote} />
   );
   return (
-    <ul>
+    <ul className="quoteList">
       {listItems}
     </ul>
   );
