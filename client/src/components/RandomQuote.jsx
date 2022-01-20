@@ -4,7 +4,7 @@ const RandomQuote = function ({ randomQuote }) {
   return (
     <div>
       <h3>random quote to muse over</h3>
-      <p className="quoteRandom">"{randomQuote.text}" - <em>{randomQuote.author}</em></p>
+      <p className="quoteRandom">"{randomQuote.text}"<br></br>- <em>{randomQuote.author}</em> | <em>category: {randomQuote.category}</em></p>
     </div>
   );
 }

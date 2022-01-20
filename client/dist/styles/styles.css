@@ -2,11 +2,19 @@ html {
   background-color: #f8f8f8; 
 }
 
+body {
+  text-align: center;
+}
+
 h1 {
   color: #e1ae36;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 60px; 
+  padding: 20px;
+  border-color: #e1ae36;
+  border: solid;
+  text-align: center;
 }
 
 h3 {
@@ -21,6 +29,16 @@ p, ul, form {
   color: #0e0d0d;
   font-family: 'Crimson Pro', serif;
   font-size: 20px; 
+}
+
+li {
+  padding-bottom: 20px;
+  list-style-position: inside;
+}
+
+li::marker {
+  color: #e1ae36;
+  content: ">";
 }
 
 textarea {
