@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
-const { save, retrieveRandom, search } = require('../database/index.js')
+const { save, retrieveRandom, search, retrieveFiveMostRecent } = require('../database/index.js')
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(express.json());
@@ -18,6 +18,12 @@ app.get('/search', (req, res) => {
   search(req.query, (searchResults) => {
     res.send(searchResults);
   });
+})
+
+app.get('/five-most-recent-quotes', (req, res) => {
+  retrieveFiveMostRecent((fiveMostRecent) => {
+    res.send(fiveMostRecent);
+  })
 })
 
 app.post('/quotes', (req, res) => {

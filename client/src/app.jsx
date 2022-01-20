@@ -61,7 +61,13 @@ class App extends React.Component {
   }
 
   fiveMostRecent() {
-    console.log('five most recent')
+    axios.get('/five-most-recent-quotes')
+      .then((response) => {
+        this.setState({ quotesList: response.data });
+      })
+      .catch((error) => {
+        alert('error in retrieving five most recent quotes')
+      })
   }
 
   render() {

@@ -69,15 +69,15 @@ const search = function (filter, callback) {
 }
 
 const retrieveFiveMostRecent = function (callback) {
-  Quote.find({}).sort({ updatedAt: -1 }).exec((err, results) => {
+  Quote.find({}).sort({ createdAt: -1 }).exec((err, results) => {
     if (err) {
       console.log('error in retrieving quotes', err);
     } else {
       var fiveMostRecent = results.slice(0, 5);
       console.log('retrieve results', fiveMostRecent);
-      callback();
+      callback(fiveMostRecent);
     }
   });
 }
 
-module.exports = { save, retrieveRandom, search }
+module.exports = { save, retrieveRandom, search, retrieveFiveMostRecent }
