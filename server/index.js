@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
-const { save, retrieveRandom, search, retrieveFiveMostRecent } = require('../database/index.js')
+const { save, retrieveRandom, search, retrieveFiveMostRecent, deleteQuote } = require('../database/index.js')
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(express.json());
@@ -50,6 +50,16 @@ app.post('/quotes', (req, res) => {
     }
   });
 });
+
+app.delete('/delete', (req, res) => {
+  deleteQuote(req.body, (err) => {
+    if (err) {
+      res.status(500).send('error in deleting quote');
+    } else {
+      res.send();
+    }
+  })
+})
 
 app.listen(port, () => {
   console.log(`server listening at http://localhost:${port}`);

@@ -32,7 +32,6 @@ p, ul, form {
 }
 
 li {
-  padding-bottom: 20px;
   list-style-position: inside;
 }
 
@@ -51,8 +50,9 @@ textarea {
 
 .quoteList {
   font-size: 22px;
+  padding-bottom: 20px;
 }
 
-.button {
+.button-search {
   margin-top: 10px;
 }

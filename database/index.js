@@ -80,4 +80,15 @@ const retrieveFiveMostRecent = function (callback) {
   });
 }
 
-module.exports = { save, retrieveRandom, search, retrieveFiveMostRecent }
+const deleteQuote = function (idObj, callback) {
+  Quote.deleteOne(idObj, (err, results) => {
+    if (err) {
+      console.log('err in delete', err);
+      callback(err);
+    } else {
+      callback(null);
+    }
+  });
+}
+
+module.exports = { save, retrieveRandom, search, retrieveFiveMostRecent, deleteQuote }

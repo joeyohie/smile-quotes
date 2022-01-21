@@ -1,13 +1,13 @@
 import React from 'react';
 import QuotesListEntry from './QuotesListEntry.jsx';
 
-const QuotesList = function ({ quotes }) {
-  const listItems = quotes.map((quote) =>
+const QuotesList = function (props) {
+  const listItems = props.quotes.map((quote) =>
     <QuotesListEntry key={quote._id}
-      quote={quote} />
+      quote={quote} deleteQuote={props.deleteQuote} />
   );
   return (
-    <ul className="quoteList">
+    <ul>
       {listItems}
     </ul>
   );

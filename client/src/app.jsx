@@ -19,6 +19,7 @@ class App extends React.Component {
     this.add = this.add.bind(this);
     this.search = this.search.bind(this);
     this.fiveMostRecent = this.fiveMostRecent.bind(this);
+    this.deleteQuote = this.deleteQuote.bind(this);
   }
 
   componentDidMount() {
@@ -71,6 +72,25 @@ class App extends React.Component {
       })
   }
 
+  deleteQuote(_id) {
+    axios.delete('/delete', { data: { _id } })
+      .then((response) => {
+        for (let i = 0; i < this.state.quotesList.length; i++) {
+          let quote = this.state.quotesList[i];
+          if (quote._id === _id) {
+            this.state.quotesList.splice(i, 1);
+            this.setState({
+              quotesList: this.state.quotesList
+            });
+          }
+        }
+      })
+      .catch((error) => {
+        console.log('delete error');
+        alert('error in deleting quote');
+      })
+  }
+
   render() {
     return (
       <div>
@@ -78,7 +98,7 @@ class App extends React.Component {
         <RandomQuote randomQuote={this.state.randomQuote} />
         <AddQuoteForm add={this.add} />
         <Search search={this.search} fiveMostRecent={this.fiveMostRecent} />
-        <QuotesList quotes={this.state.quotesList} />
+        <QuotesList quotes={this.state.quotesList} deleteQuote={this.deleteQuote} />
       </div>
     );
   }

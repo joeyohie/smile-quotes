@@ -89,7 +89,7 @@ class Search extends React.Component {
           </label>{' '}
           <input type="submit" value="submit" />
         </form>
-        <button className="button" onClick={this.handleClick}>
+        <button className="button-search" onClick={this.handleClick}>
           click here for the 5 most recently added quotes
         </button>
       </div>
