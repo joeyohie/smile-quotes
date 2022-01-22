@@ -22,7 +22,7 @@ Once the project moves into development, the press release can be used as a touc
   > For those needing a little boost of positive energy and a way to keep a collection of their favorites.
 
 ## Product Summary ##
-  > When you find a quote that speaks to you, you can save them here to remember them in the future. A random quote that you've collected will be shown each time you visit the site, but if you're looking for something specific, you can search for them by category. This is a way to keep a collection of your favorite quotes and come back to get inspired again by them, just when you need it the most. 
+  > When you find a quote that speaks to you, you can save them here to remember them in the future. A random quote that you've collected will be shown each time you visit the site, but if you're looking for something specific, you can search for them by a word in the quote, author, or category. You can also see the 5 most recent quotes saved. This is a way to keep a collection of your favorite quotes and come back to get inspired again by them, just when you need it the most. 
 
 ## Problem ##
   > Sometimes a great quote can change your mood or perspective. This app enables you to store them and return to them when you need to destress, get motivated, and smile (inside and out). 
@@ -31,10 +31,10 @@ Once the project moves into development, the press release can be used as a touc
   > Remind yourself of the words that make you happy, productive, and motivated. 
 
 ## Quote from You ##
-  > "Come for smiles and a little boost of positive and productive energy."
+  > "Come for smiles - stay to be inspired."
 
 ## How to Get Started ##
-  > Start by adding your favorite quotes. Every time you come back, you can store more and browse categories based on the mood you are seeking.
+  > Start by adding your favorite quotes. Every time you come back, you can store more and browse to find the quote you are seeking.
 
 ## Hypothetical Customer Quote ##
   > "This app gives me a way to save all my favorite quotes. I've been jotting them down in different places - on my phone, highlighted in books, on a post-it on the fridge. Now they are all centralized and I can come back whenever I want to jot down more or need that extra boost of sunshine to keep my day happy, productive, and satisfying." 

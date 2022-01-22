@@ -72,11 +72,12 @@ class AddQuoteForm extends React.Component {
       }
     }
   }
-
+  
   render() {
     return (
       <div>
         <h3>add your favorite quotes</h3>
+        <h4><em>*update by retyping text with a different author and/or category</em></h4>
         <form onSubmit={this.handleSubmit}>
           <label>
             text{' '}

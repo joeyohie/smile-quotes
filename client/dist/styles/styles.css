@@ -25,6 +25,13 @@ h3 {
   padding-top: 25px;
 }
 
+h4 {
+  color: #e1ae36;
+  font-family: 'Crimson Pro', serif;
+  font-weight: 400;
+  font-size: 20px; 
+}
+
 p, ul, form {
   color: #0e0d0d;
   font-family: 'Crimson Pro', serif;
